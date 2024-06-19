@@ -1,41 +1,11 @@
+import AuthForm from '@/components/AuthForm';
 import React, { useState } from 'react';
 
-interface SignUpProps {
-    // Add any props you need for the signup component
-}
-
-const SignUp: React.FC<SignUpProps> = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-
-    const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setEmail(e.target.value);
-    };
-
-    const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setPassword(e.target.value);
-    };
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        // Add your signup logic here
-        console.log('Email:', email);
-        console.log('Password:', password);
-    };
-
+const SignUp = () => {
     return (
-        <div>
-            <h2>Sign Up</h2>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="email">Email:</label>
-                <input type="email" id="email" value={email} onChange={handleEmailChange} />
-
-                <label htmlFor="password">Password:</label>
-                <input type="password" id="password" value={password} onChange={handlePasswordChange} />
-
-                <button type="submit">Sign Up</button>
-            </form>
-        </div>
+        <section className='flex-center size-full max-sm:px-6'>
+            <AuthForm type="sign-up" />
+        </section>
     );
 };
 

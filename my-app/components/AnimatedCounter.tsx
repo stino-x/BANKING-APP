@@ -6,7 +6,7 @@ interface AnimatedCounterProps {
     amount: number;
 }
 
-const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ amount }) => {
+const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ amount }: { amount: number }) => {
     return (
         <div className='w-full'>
             <CountUp
